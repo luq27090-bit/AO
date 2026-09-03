@@ -1,92 +1,31 @@
 ---
-import { Container, FeatureCard } from '@components/odyssey-theme';
-
 import Layout from '../layouts/Page.astro';
-import HomeHeroSection from '../components/sections/heros/HomeHeroSection.astro';
 ---
 
 <Layout>
-	<HomeHeroSection />
-	<Container>
-		<section class="feature-card__section">
-			<h2>Landing Pages</h2>
-			<p>
-				Use one of our landing pages to jumpstart your website or
-				ad campaign.
-			</p>
-			<div class="feature-card__grid">
-				<FeatureCard href="/landing-pages/landing-1" title="Landing Page 1" imgSrc="/assets/images/home/screenshots/landing-1">
-				</FeatureCard>
-				<FeatureCard href="/landing-pages/landing-2" title="Landing Page 2" imgSrc="/assets/images/home/screenshots/landing-2">
-				</FeatureCard>
+	<main class="site">
+		<section class="hero">
+			<div class="hero__image" aria-hidden="true"><div class="hero__emblem">◉</div></div>
+			<div class="hero__copy">
+				<p class="eyebrow">SECOND LIFE / AUTOMOTIVE CRAFT</p>
+				<h1>A second life<br />for your emblem.</h1>
+				<p class="lede">We preserve the identity of the original badge, then give it a new material life through hand-finished enamel craft.</p>
+				<a class="cta" href="/customize">DISCOVER THE SECOND LIFE <span>↗</span></a>
 			</div>
 		</section>
-	</Container>
-
-	<Container>
-		<section class="feature-card__section">
-			<h2>Company Pages</h2>
-			<p>
-				Use one of our prebuilt company pages for your about page, contact page,
-				legal pages, blog posts, etc.
-			</p>
-			<div class="feature-card__grid">
-				<FeatureCard href="/company/about" title="About Page" imgSrc="/assets/images/home/screenshots/about">
-				</FeatureCard>
-				<FeatureCard href="/company/contact" title="Contact Page" imgSrc="/assets/images/home/screenshots/contact">
-				</FeatureCard>
-				<FeatureCard href="/blog/" title="Blog Page" imgSrc="/assets/images/home/screenshots/blog">
-				</FeatureCard>
-				<FeatureCard
-					href="/blog/posts/remote-work-mental-health"
-					title="Blog Post"
-          imgSrc="/assets/images/home/screenshots/blog-post"
-				>
-				</FeatureCard>
-				<FeatureCard
-					href="/company/legal"
-					imgSrc="/assets/images/home/screenshots/legal"
-					title="Legal Page"
-				>
-				</FeatureCard>
-			</div>
-		</section>
-	</Container>
-
-	<Container>
-		<section class="feature-card__section">
-			<h2>Theme Pages</h2>
-			<p>Learn more about how to set up and use the Odyssey Theme.</p>
-			<div class="feature-card__grid">
-				<FeatureCard
-					href="/theme/get-started"
-					imgSrc="/assets/images/home/screenshots/get-started"
-					title="Get Started"
-				>
-				</FeatureCard>
-				<FeatureCard
-					href="/theme/style-guide"
-					imgSrc="/assets/images/home/screenshots/style-guide"
-					title="Style Guide"
-				>
-				</FeatureCard>
-			</div>
-		</section>
-	</Container>
+		<section class="manifesto"><div><span>01</span><h2>KEEP THE ORIGINAL.</h2></div><p>Your car's identity stays intact. We transform the surface, finish and feeling — never the meaning.</p></section>
+		<section class="choices"><div class="section-head"><p class="eyebrow">THE COLLECTION</p><h2>Made for the details<br />you notice.</h2></div><div class="choice-grid">
+			<a href="/customize" class="choice"><span>01</span><strong>CAR EMBLEMS</strong><small>Choose your marque, model and finish.</small></a>
+			<a href="/signature" class="choice"><span>02</span><strong>YOUR SIGNATURE</strong><small>Add a name, monogram or personal mark.</small></a>
+			<a href="/custom" class="choice"><span>03</span><strong>OTHER LOGOS</strong><small>Bring us the mark that means something to you.</small></a>
+		</div></section>
+		<section class="process"><div class="section-head"><p class="eyebrow">THE PROCESS</p><h2>From original<br />to one of one.</h2></div><div class="steps">
+			<div><span>01</span><b>SELECT</b><p>Brand · Model · Year · Position</p></div><div><span>02</span><b>DESIGN</b><p>Finish · Colour · Personalisation</p></div><div><span>03</span><b>CRAFT</b><p>Hand-finished enamel construction</p></div><div><span>04</span><b>DELIVER</b><p>A piece made specifically for you</p></div>
+		</div></section>
+		<section class="final-cta"><p class="eyebrow">YOUR EMBLEM / YOUR SECOND LIFE</p><h2>Begin with<br />what you already own.</h2><a class="cta cta--light" href="/customize">START CUSTOMIZING <span>↗</span></a></section>
+	</main>
 </Layout>
 
 <style>
-	.feature-card__section {
-		margin: var(--section-margin) auto;
-	}
-	.feature-card__grid {
-		display: grid;
-		grid-template-columns: repeat(2, 1fr);
-		gap: var(--theme-grid-gap);
-	}
-	@media (max-width: 768px) {
-		.feature-card__grid {
-			grid-template-columns: 1fr;
-		}
-	}
+:global(body){background:#f3f1eb;color:#151515;max-width:none;font-family:Arial,Helvetica,sans-serif}.site{overflow:hidden}.hero{min-height:92vh;display:grid;grid-template-columns:1.15fr .85fr;background:#111;color:#f3f1eb}.hero__image{position:relative;min-height:600px;background:radial-gradient(circle at 50% 45%,#3b3b3b 0,#171717 38%,#090909 72%);display:grid;place-items:center}.hero__image:after{content:'';position:absolute;inset:12%;border:1px solid rgba(255,255,255,.15);border-radius:50%}.hero__emblem{width:min(48vw,560px);aspect-ratio:1;border-radius:50%;display:grid;place-items:center;font-size:12rem;color:#d9b77c;background:radial-gradient(circle,#777 0,#252525 55%,#111 72%);box-shadow:0 25px 80px #000,inset 0 0 0 2px #b99a67,inset 0 0 50px #000}.hero__copy{display:flex;flex-direction:column;justify-content:center;padding:8vw;max-width:620px}.eyebrow{font-size:11px;letter-spacing:.22em;margin:0 0 28px;opacity:.65}.hero h1{font-size:clamp(48px,6vw,92px);font-weight:400;line-height:.95;letter-spacing:-.05em;margin:0 0 34px}.lede{font-size:18px;line-height:1.55;max-width:470px;opacity:.72}.cta{display:inline-flex;align-items:center;justify-content:space-between;color:inherit;text-decoration:none;border-bottom:1px solid currentColor;padding:18px 0;width:270px;font-size:11px;letter-spacing:.16em;margin-top:34px}.cta span{font-size:18px}.manifesto,.choices,.process{padding:12vw 8vw}.manifesto{display:grid;grid-template-columns:1fr 1fr;gap:10vw;border-bottom:1px solid #ccc}.manifesto h2,.section-head h2{font-size:clamp(38px,5vw,76px);font-weight:400;line-height:.98;letter-spacing:-.04em;margin:0}.manifesto span,.steps span,.choice span{font-size:11px;opacity:.45}.manifesto p{font-size:22px;line-height:1.4;max-width:530px;margin:0}.choice-grid{display:grid;grid-template-columns:repeat(3,1fr);margin-top:90px;border-top:1px solid #bbb}.choice{min-height:260px;padding:25px;border-right:1px solid #bbb;color:inherit;text-decoration:none;display:flex;flex-direction:column;justify-content:space-between;transition:padding .35s ease,background .35s ease}.choice:hover{padding-top:38px;background:#e8e5dd}.choice strong{font-size:18px;font-weight:400;letter-spacing:.08em}.choice small{font-size:13px;line-height:1.5;max-width:220px;opacity:.6}.process{background:#181818;color:#f3f1eb;display:grid;grid-template-columns:1fr 1fr;gap:10vw}.steps{display:grid;grid-template-columns:1fr 1fr;border-top:1px solid #555}.steps>div{padding:25px 10px 40px 0;border-bottom:1px solid #555}.steps b{display:block;font-size:18px;font-weight:400;margin:30px 0 12px}.steps p{font-size:13px;opacity:.55;margin:0;line-height:1.5}.final-cta{padding:14vw 8vw;background:#b99a67;color:#111}.final-cta h2{font-size:clamp(50px,8vw,120px);font-weight:400;line-height:.88;letter-spacing:-.06em;margin:0}.cta--light{width:240px}@media(max-width:768px){.hero{grid-template-columns:1fr;min-height:auto}.hero__image{min-height:55vh}.hero__emblem{width:65vw}.hero__copy{padding:16vw 8vw 20vw}.hero h1{font-size:52px}.manifesto,.process{grid-template-columns:1fr;gap:60px}.manifesto p{font-size:18px}.choice-grid{grid-template-columns:1fr;margin-top:55px}.choice{border-right:0;border-bottom:1px solid #bbb;min-height:190px}.steps{grid-template-columns:1fr}.final-cta{padding:24vw 8vw}}
 </style>
