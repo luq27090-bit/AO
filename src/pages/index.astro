@@ -1,31 +1,58 @@
 ---
 import Layout from '../layouts/Page.astro';
+const works = [
+  { no: '01', title: 'ENAMEL / DEEP BLUE', note: 'High-gloss enamel with sculpted metal linework', pos: '18% 24%' },
+  { no: '02', title: 'METAL / OXIDE GOLD', note: 'Aged metallic field with hand-finished detailing', pos: '19% 70%' },
+  { no: '03', title: 'FORM / OVAL', note: 'Low-profile form for grille and trim applications', pos: '68% 25%' },
+  { no: '04', title: 'SIGNATURE / ONE OF ONE', note: 'A personal mark integrated into the object', pos: '69% 72%' },
+];
 ---
-
 <Layout>
-	<main class="site">
-		<section class="hero">
-			<div class="hero__image" aria-hidden="true"><div class="hero__emblem">◉</div></div>
-			<div class="hero__copy">
-				<p class="eyebrow">SECOND LIFE / AUTOMOTIVE CRAFT</p>
-				<h1>A second life<br />for your emblem.</h1>
-				<p class="lede">We preserve the identity of the original badge, then give it a new material life through hand-finished enamel craft.</p>
-				<a class="cta" href="/customize">DISCOVER THE SECOND LIFE <span>↗</span></a>
-			</div>
-		</section>
-		<section class="manifesto"><div><span>01</span><h2>KEEP THE ORIGINAL.</h2></div><p>Your car's identity stays intact. We transform the surface, finish and feeling — never the meaning.</p></section>
-		<section class="choices"><div class="section-head"><p class="eyebrow">THE COLLECTION</p><h2>Made for the details<br />you notice.</h2></div><div class="choice-grid">
-			<a href="/customize" class="choice"><span>01</span><strong>CAR EMBLEMS</strong><small>Choose your marque, model and finish.</small></a>
-			<a href="/signature" class="choice"><span>02</span><strong>YOUR SIGNATURE</strong><small>Add a name, monogram or personal mark.</small></a>
-			<a href="/custom" class="choice"><span>03</span><strong>OTHER LOGOS</strong><small>Bring us the mark that means something to you.</small></a>
-		</div></section>
-		<section class="process"><div class="section-head"><p class="eyebrow">THE PROCESS</p><h2>From original<br />to one of one.</h2></div><div class="steps">
-			<div><span>01</span><b>SELECT</b><p>Brand · Model · Year · Position</p></div><div><span>02</span><b>DESIGN</b><p>Finish · Colour · Personalisation</p></div><div><span>03</span><b>CRAFT</b><p>Hand-finished enamel construction</p></div><div><span>04</span><b>DELIVER</b><p>A piece made specifically for you</p></div>
-		</div></section>
-		<section class="final-cta"><p class="eyebrow">YOUR EMBLEM / YOUR SECOND LIFE</p><h2>Begin with<br />what you already own.</h2><a class="cta cta--light" href="/customize">START CUSTOMIZING <span>↗</span></a></section>
-	</main>
-</Layout>
+  <main class="cx-site">
+    <section class="hero">
+      <div class="hero-media"><img src="/images/craft-x-works.svg" alt="Craft X enamel emblem studies" /></div>
+      <div class="hero-shade"></div>
+      <div class="hero-content">
+        <p class="eyebrow">CRAFT X / AUTOMOTIVE OBJECTS</p>
+        <h1>Objects<br /><em>with presence.</em></h1>
+        <div class="hero-bottom"><p>We transform familiar automotive emblems through material, colour and hand-finished craft.</p><a href="#works">Explore the works <span>↓</span></a></div>
+      </div>
+      <div class="hero-index">01 — 01</div>
+    </section>
 
+    <section id="works" class="works section-light">
+      <div class="section-intro"><div><p class="eyebrow">SELECTED WORKS</p><h2>Designed to be<br /><em>noticed.</em></h2></div><p class="intro-copy">A selection of enamel and metal directions developed for automotive culture. Every piece starts with an existing identity and becomes a new object.</p></div>
+      <div class="works-grid">
+        {works.map((work, i) => <article class={`work work-${i + 1}`}><div class="work-image" style={`background-position:${work.pos}`}></div><div class="work-meta"><span>{work.no}</span><div><h3>{work.title}</h3><p>{work.note}</p></div></div></article>)}
+      </div>
+      <div class="works-foot"><span>CRAFT X / SELECTED STUDIES</span><a href="/customize">Create your own <span>↗</span></a></div>
+    </section>
+
+    <section class="configure section-dark">
+      <div class="configure-copy"><p class="eyebrow">THE CONFIGURATOR</p><h2>Your vehicle.<br /><em>Your object.</em></h2><p>Start with the vehicle you already drive. Select the marque, model, generation and position, then define the material, finish, enamel and personal mark.</p><a class="button-light" href="/customize">START CONFIGURING <span>↗</span></a></div>
+      <div class="configure-steps"><div><span>01</span><b>VEHICLE</b><small>Brand · Model · Year</small></div><div><span>02</span><b>FORM</b><small>Position · Size · Fit</small></div><div><span>03</span><b>MATERIAL</b><small>Metal · Finish · Enamel</small></div><div><span>04</span><b>PERSONAL</b><small>Signature · Preview</small></div></div>
+    </section>
+
+    <section class="craft section-light">
+      <div class="craft-head"><p class="eyebrow">THE CRAFT</p><h2>Made by hand.<br />Finished with <em>intent.</em></h2></div>
+      <div class="craft-detail"><div class="detail-disc"><div class="disc-inner">CX</div></div><div><p>Metal, wire, enamel and light. We treat every surface as part of the design, with a finish that rewards a closer look.</p><a class="text-link" href="/craft">Discover the craft <span>↗</span></a></div></div>
+    </section>
+
+    <section class="services section-mid">
+      <div class="section-intro"><div><p class="eyebrow">SERVICES</p><h2>More than<br /><em>an emblem.</em></h2></div><p class="intro-copy">From automotive commissions to personal marks and special projects, Craft X is built around objects that carry identity.</p></div>
+      <div class="service-list"><a href="/customize"><span>01</span><strong>Automotive</strong><small>Custom emblem for your vehicle</small><i>↗</i></a><a href="/signature"><span>02</span><strong>Signature</strong><small>Name, monogram or personal mark</small><i>↗</i></a><a href="/custom"><span>03</span><strong>Commission</strong><small>Special logos and one-off objects</small><i>↗</i></a></div>
+    </section>
+
+    <section class="final-cta"><p class="eyebrow">CRAFT X</p><h2>Make the familiar<br /><em>yours.</em></h2><a class="button-dark" href="/customize">BEGIN A COMMISSION <span>↗</span></a></section>
+  </main>
+</Layout>
 <style>
-:global(body){background:#f3f1eb;color:#151515;max-width:none;font-family:Arial,Helvetica,sans-serif}.site{overflow:hidden}.hero{min-height:92vh;display:grid;grid-template-columns:1.15fr .85fr;background:#111;color:#f3f1eb}.hero__image{position:relative;min-height:600px;background:radial-gradient(circle at 50% 45%,#3b3b3b 0,#171717 38%,#090909 72%);display:grid;place-items:center}.hero__image:after{content:'';position:absolute;inset:12%;border:1px solid rgba(255,255,255,.15);border-radius:50%}.hero__emblem{width:min(48vw,560px);aspect-ratio:1;border-radius:50%;display:grid;place-items:center;font-size:12rem;color:#d9b77c;background:radial-gradient(circle,#777 0,#252525 55%,#111 72%);box-shadow:0 25px 80px #000,inset 0 0 0 2px #b99a67,inset 0 0 50px #000}.hero__copy{display:flex;flex-direction:column;justify-content:center;padding:8vw;max-width:620px}.eyebrow{font-size:11px;letter-spacing:.22em;margin:0 0 28px;opacity:.65}.hero h1{font-size:clamp(48px,6vw,92px);font-weight:400;line-height:.95;letter-spacing:-.05em;margin:0 0 34px}.lede{font-size:18px;line-height:1.55;max-width:470px;opacity:.72}.cta{display:inline-flex;align-items:center;justify-content:space-between;color:inherit;text-decoration:none;border-bottom:1px solid currentColor;padding:18px 0;width:270px;font-size:11px;letter-spacing:.16em;margin-top:34px}.cta span{font-size:18px}.manifesto,.choices,.process{padding:12vw 8vw}.manifesto{display:grid;grid-template-columns:1fr 1fr;gap:10vw;border-bottom:1px solid #ccc}.manifesto h2,.section-head h2{font-size:clamp(38px,5vw,76px);font-weight:400;line-height:.98;letter-spacing:-.04em;margin:0}.manifesto span,.steps span,.choice span{font-size:11px;opacity:.45}.manifesto p{font-size:22px;line-height:1.4;max-width:530px;margin:0}.choice-grid{display:grid;grid-template-columns:repeat(3,1fr);margin-top:90px;border-top:1px solid #bbb}.choice{min-height:260px;padding:25px;border-right:1px solid #bbb;color:inherit;text-decoration:none;display:flex;flex-direction:column;justify-content:space-between;transition:padding .35s ease,background .35s ease}.choice:hover{padding-top:38px;background:#e8e5dd}.choice strong{font-size:18px;font-weight:400;letter-spacing:.08em}.choice small{font-size:13px;line-height:1.5;max-width:220px;opacity:.6}.process{background:#181818;color:#f3f1eb;display:grid;grid-template-columns:1fr 1fr;gap:10vw}.steps{display:grid;grid-template-columns:1fr 1fr;border-top:1px solid #555}.steps>div{padding:25px 10px 40px 0;border-bottom:1px solid #555}.steps b{display:block;font-size:18px;font-weight:400;margin:30px 0 12px}.steps p{font-size:13px;opacity:.55;margin:0;line-height:1.5}.final-cta{padding:14vw 8vw;background:#b99a67;color:#111}.final-cta h2{font-size:clamp(50px,8vw,120px);font-weight:400;line-height:.88;letter-spacing:-.06em;margin:0}.cta--light{width:240px}@media(max-width:768px){.hero{grid-template-columns:1fr;min-height:auto}.hero__image{min-height:55vh}.hero__emblem{width:65vw}.hero__copy{padding:16vw 8vw 20vw}.hero h1{font-size:52px}.manifesto,.process{grid-template-columns:1fr;gap:60px}.manifesto p{font-size:18px}.choice-grid{grid-template-columns:1fr;margin-top:55px}.choice{border-right:0;border-bottom:1px solid #bbb;min-height:190px}.steps{grid-template-columns:1fr}.final-cta{padding:24vw 8vw}}
+:global(html){scroll-behavior:smooth}:global(body){margin:0;background:#111;color:#141414;font-family:Arial,Helvetica,sans-serif}.cx-site{overflow:hidden}.section-light{background:#f2f0ea;color:#171717}.section-mid{background:#ddd9d0;color:#171717}.section-dark{background:#111;color:#f1eee8}
+.hero{position:relative;min-height:100svh;background:#111;color:#f4f1e9;display:flex;align-items:flex-end;overflow:hidden}.hero-media,.hero-shade{position:absolute;inset:0}.hero-media img{width:100%;height:100%;object-fit:cover;filter:saturate(.8) contrast(1.05);transform:scale(1.04)}.hero-shade{background:linear-gradient(90deg,rgba(0,0,0,.72),rgba(0,0,0,.12) 65%,rgba(0,0,0,.42)),linear-gradient(0deg,rgba(0,0,0,.68),transparent 48%)}.hero-content{position:relative;z-index:2;padding:0 7vw 7vw;max-width:900px}.eyebrow{font-size:10px;letter-spacing:.22em;text-transform:uppercase;opacity:.58;margin:0 0 26px}.hero h1{font-size:clamp(70px,10vw,160px);font-weight:300;line-height:.83;letter-spacing:-.07em;margin:0}.hero em,.section-intro em,.configure em,.craft em,.services em,.final-cta em{font-family:Georgia,serif;font-weight:400}.hero-bottom{display:flex;align-items:flex-end;justify-content:space-between;gap:50px;margin-top:50px}.hero-bottom p{max-width:360px;font-size:14px;line-height:1.55;opacity:.7;margin:0}.hero-bottom a{color:inherit;text-decoration:none;border-bottom:1px solid rgba(255,255,255,.45);padding-bottom:12px;font-size:10px;letter-spacing:.16em;text-transform:uppercase}.hero-bottom span,.button-light span,.button-dark span,.text-link span,.works-foot a span{font-size:16px;margin-left:10px}.hero-index{position:absolute;right:30px;top:100px;font-size:9px;letter-spacing:.16em;opacity:.4;writing-mode:vertical-rl}
+.works{padding:12vw 7vw 6vw}.section-intro{display:grid;grid-template-columns:1fr 1fr;gap:8vw;align-items:end}.section-intro h2,.craft-head h2,.configure h2,.final-cta h2{font-size:clamp(54px,7vw,108px);font-weight:300;line-height:.88;letter-spacing:-.065em;margin:0}.intro-copy{max-width:440px;font-size:17px;line-height:1.55;opacity:.62;margin:0 0 4px}.works-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:18px;margin-top:10vw}.work{min-height:520px}.work:nth-child(2),.work:nth-child(3){min-height:420px}.work-image{height:calc(100% - 70px);min-height:390px;background-image:url('/images/craft-x-works.svg');background-size:330% 330%;background-repeat:no-repeat;background-color:#858585;transition:transform .7s cubic-bezier(.2,.7,.2,1),filter .7s}.work:hover .work-image{transform:scale(.985);filter:contrast(1.08) saturate(1.05)}.work-meta{display:grid;grid-template-columns:40px 1fr;gap:14px;padding:16px 0;border-top:1px solid #b8b4ab}.work-meta span{font-size:9px;opacity:.4}.work-meta h3{font-size:11px;letter-spacing:.13em;font-weight:500;margin:0 0 7px}.work-meta p{font-size:12px;opacity:.5;margin:0}.works-foot{display:flex;justify-content:space-between;border-top:1px solid #b8b4ab;margin-top:7vw;padding-top:18px;font-size:9px;letter-spacing:.16em;opacity:.6}.works-foot a{color:inherit;text-decoration:none}
+.configure{padding:11vw 7vw;display:grid;grid-template-columns:1fr 1fr;gap:10vw}.configure-copy>p:not(.eyebrow){max-width:450px;font-size:17px;line-height:1.6;opacity:.62;margin:42px 0 0}.button-light,.button-dark{display:inline-flex;color:inherit;text-decoration:none;border:1px solid currentColor;padding:17px 18px;margin-top:38px;font-size:10px;letter-spacing:.16em}.configure-steps{border-top:1px solid #414141;display:grid;grid-template-columns:1fr 1fr}.configure-steps>div{min-height:150px;padding:20px 14px 20px 0;border-bottom:1px solid #414141}.configure-steps span{font-size:9px;opacity:.4}.configure-steps b{display:block;font-weight:400;font-size:15px;letter-spacing:.1em;margin:38px 0 9px}.configure-steps small{font-size:11px;opacity:.45}
+.craft{padding:12vw 7vw}.craft-detail{margin-top:9vw;display:grid;grid-template-columns:1.1fr .9fr;align-items:center;gap:10vw}.detail-disc{width:min(50vw,610px);aspect-ratio:1;border-radius:50%;background:radial-gradient(circle at 34% 30%,#dad5ca 0,#8a877f 24%,#282725 62%,#090909 100%);box-shadow:0 35px 80px rgba(0,0,0,.22),inset 0 0 0 2px #a59f92;display:grid;place-items:center}.disc-inner{width:36%;aspect-ratio:1;border-radius:50%;display:grid;place-items:center;border:1px solid #c8c1b3;color:#eee;font-size:clamp(28px,4vw,60px);letter-spacing:.08em}.craft-detail p{font-size:19px;line-height:1.55;max-width:390px;opacity:.62}.text-link{display:inline-block;color:inherit;text-decoration:none;border-bottom:1px solid #aaa;padding-bottom:10px;margin-top:24px;font-size:10px;letter-spacing:.16em;text-transform:uppercase}
+.services{padding:12vw 7vw}.service-list{margin-top:9vw;border-top:1px solid #aaa}.service-list a{display:grid;grid-template-columns:50px 1.1fr 1fr 30px;align-items:center;padding:28px 0;border-bottom:1px solid #aaa;color:inherit;text-decoration:none}.service-list span{font-size:9px;opacity:.45}.service-list strong{font-size:24px;font-weight:300}.service-list small{font-size:12px;opacity:.5}.service-list i{font-style:normal;font-size:18px;text-align:right}.service-list a:hover strong{letter-spacing:.03em}
+.final-cta{background:#b7a98f;color:#111;padding:14vw 7vw}.final-cta h2{margin-top:0}.button-dark{margin-top:50px}
+@media(max-width:768px){.cx-header{display:flex}.hero{min-height:88svh}.hero-content{padding:0 7vw 13vw}.hero h1{font-size:60px}.hero-bottom{display:block;margin-top:36px}.hero-bottom a{display:inline-block;margin-top:30px}.section-intro,.configure,.craft-detail{grid-template-columns:1fr;gap:50px}.works{padding-top:22vw}.works-grid{grid-template-columns:1fr;gap:35px;margin-top:18vw}.work,.work:nth-child(2),.work:nth-child(3){min-height:0}.work-image{height:78vw;min-height:0}.configure{padding:20vw 7vw}.configure-steps{margin-top:20px}.craft{padding:20vw 7vw}.detail-disc{width:86vw}.services{padding:20vw 7vw}.service-list{margin-top:16vw}.service-list a{grid-template-columns:32px 1fr 22px}.service-list small{display:none}.service-list strong{font-size:19px}.final-cta{padding:25vw 7vw}.final-cta h2{font-size:64px}.works-foot{margin-top:16vw}.hero-index{display:none}}
 </style>
