@@ -1,40 +1,26 @@
 ---
-import { Header, Button, Footer } from '@components/odyssey-theme';
 import Layout from './Base.astro';
 import type { Props as BaseHeadProps } from '../components/head/BaseHead.astro';
 import Logo from '../components/Logo.astro';
-import settings from '../config/settings';
-import { footerLists, footerSocials } from '../config/footer';
-
-
-export interface Props {
-	seo?: BaseHeadProps;
-}
-
 import { nav } from '../config/nav.js';
-
+export interface Props { seo?: BaseHeadProps; }
 const { seo } = Astro.props as Props;
 ---
-
 <Layout seo={seo}>
-	<Header rightMenu navData={nav} slot="header">
-		<span slot="logo">
-			<Logo />
-		</span>
-		<Button slot="action-item" href="/theme/get-started">Get Started</Button>
-	</Header>
-	<div id="page">
-		<slot />
-	</div>
-	<Footer
-		slot="footer"
-		background="var(--theme-surface-1)"
-		color="var(--theme-on-surface-1)"
-		footerLists={footerLists}
-    footerSocials={footerSocials}
-		copyrightName={settings.name}
-    showPlug={settings.showPlug}
-	>
-		<Logo slot="logo" />
-	</Footer>
+  <header class="cx-header">
+    <a class="cx-brand" href="/" aria-label="Craft X home"><Logo /></a>
+    <nav aria-label="Primary navigation">{nav.map((item) => <a href={item.slug}>{item.title}</a>)}</nav>
+    <a class="cx-header-cta" href="/customize">Start a piece <span>↗</span></a>
+  </header>
+  <div id="page"><slot /></div>
+  <footer class="cx-footer">
+    <div class="cx-footer-top"><div><Logo /><p>Automotive objects, made personal.</p></div><div class="cx-footer-links"><a href="/#works">Works</a><a href="/customize">Configure</a><a href="/craft">Craft</a><a href="/about">Services</a></div></div>
+    <div class="cx-footer-bottom"><span>CRAFT X</span><span>© {new Date().getFullYear()} Craft X</span></div>
+  </footer>
 </Layout>
+<style>
+  .cx-header{position:fixed;z-index:50;top:0;left:0;right:0;height:76px;display:grid;grid-template-columns:1fr auto 1fr;align-items:center;padding:0 32px;background:rgba(12,12,12,.82);backdrop-filter:blur(16px);color:#f3f1eb;border-bottom:1px solid rgba(255,255,255,.1)}
+  .cx-brand{justify-self:start;color:inherit}.cx-header nav{display:flex;gap:34px}.cx-header nav a,.cx-header-cta{color:inherit;text-decoration:none;font:500 10px/1 Arial,Helvetica,sans-serif;letter-spacing:.16em;text-transform:uppercase;opacity:.78}.cx-header nav a:hover,.cx-header-cta:hover{opacity:1}.cx-header-cta{justify-self:end;border:1px solid rgba(255,255,255,.28);padding:13px 15px}.cx-header-cta span{font-size:14px;margin-left:9px}
+  .cx-footer{background:#111;color:#eee;padding:80px 7vw 24px;font-family:Arial,Helvetica,sans-serif}.cx-footer-top{display:flex;justify-content:space-between;gap:40px;padding-bottom:80px}.cx-footer p{font-size:13px;opacity:.5;margin-top:20px}.cx-footer-links{display:flex;gap:28px}.cx-footer-links a{color:inherit;text-decoration:none;font-size:11px;letter-spacing:.13em;text-transform:uppercase;opacity:.65}.cx-footer-links a:hover{opacity:1}.cx-footer-bottom{border-top:1px solid #333;padding-top:20px;display:flex;justify-content:space-between;font-size:9px;letter-spacing:.16em;opacity:.45}
+  @media(max-width:768px){.cx-header{height:64px;padding:0 18px;grid-template-columns:1fr auto}.cx-header nav{display:none}.cx-header-cta{font-size:9px;padding:11px}.cx-footer-top{display:block;padding-bottom:55px}.cx-footer-links{margin-top:45px;flex-wrap:wrap;gap:18px}.cx-footer{padding:60px 7vw 20px}.cx-footer-bottom{font-size:8px}}
+</style>
