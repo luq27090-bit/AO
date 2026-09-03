@@ -1,92 +1,58 @@
 ---
-import { Container, FeatureCard } from '@components/odyssey-theme';
-
 import Layout from '../layouts/Page.astro';
-import HomeHeroSection from '../components/sections/heros/HomeHeroSection.astro';
+const works = [
+  { no: '01', title: 'ENAMEL / DEEP BLUE', note: 'High-gloss enamel with sculpted metal linework', pos: '18% 24%' },
+  { no: '02', title: 'METAL / OXIDE GOLD', note: 'Aged metallic field with hand-finished detailing', pos: '19% 70%' },
+  { no: '03', title: 'FORM / OVAL', note: 'Low-profile form for grille and trim applications', pos: '68% 25%' },
+  { no: '04', title: 'SIGNATURE / ONE OF ONE', note: 'A personal mark integrated into the object', pos: '69% 72%' },
+];
 ---
-
 <Layout>
-	<HomeHeroSection />
-	<Container>
-		<section class="feature-card__section">
-			<h2>Landing Pages</h2>
-			<p>
-				Use one of our landing pages to jumpstart your website or
-				ad campaign.
-			</p>
-			<div class="feature-card__grid">
-				<FeatureCard href="/landing-pages/landing-1" title="Landing Page 1" imgSrc="/assets/images/home/screenshots/landing-1">
-				</FeatureCard>
-				<FeatureCard href="/landing-pages/landing-2" title="Landing Page 2" imgSrc="/assets/images/home/screenshots/landing-2">
-				</FeatureCard>
-			</div>
-		</section>
-	</Container>
+  <main class="cx-site">
+    <section class="hero">
+      <div class="hero-media"><img src="/images/craft-x-works.svg" alt="Craft X enamel emblem studies" /></div>
+      <div class="hero-shade"></div>
+      <div class="hero-content">
+        <p class="eyebrow">CRAFT X / AUTOMOTIVE OBJECTS</p>
+        <h1>Objects<br /><em>with presence.</em></h1>
+        <div class="hero-bottom"><p>We transform familiar automotive emblems through material, colour and hand-finished craft.</p><a href="#works">Explore the works <span>↓</span></a></div>
+      </div>
+      <div class="hero-index">01 — 01</div>
+    </section>
 
-	<Container>
-		<section class="feature-card__section">
-			<h2>Company Pages</h2>
-			<p>
-				Use one of our prebuilt company pages for your about page, contact page,
-				legal pages, blog posts, etc.
-			</p>
-			<div class="feature-card__grid">
-				<FeatureCard href="/company/about" title="About Page" imgSrc="/assets/images/home/screenshots/about">
-				</FeatureCard>
-				<FeatureCard href="/company/contact" title="Contact Page" imgSrc="/assets/images/home/screenshots/contact">
-				</FeatureCard>
-				<FeatureCard href="/blog/" title="Blog Page" imgSrc="/assets/images/home/screenshots/blog">
-				</FeatureCard>
-				<FeatureCard
-					href="/blog/posts/remote-work-mental-health"
-					title="Blog Post"
-          imgSrc="/assets/images/home/screenshots/blog-post"
-				>
-				</FeatureCard>
-				<FeatureCard
-					href="/company/legal"
-					imgSrc="/assets/images/home/screenshots/legal"
-					title="Legal Page"
-				>
-				</FeatureCard>
-			</div>
-		</section>
-	</Container>
+    <section id="works" class="works section-light">
+      <div class="section-intro"><div><p class="eyebrow">SELECTED WORKS</p><h2>Designed to be<br /><em>noticed.</em></h2></div><p class="intro-copy">A selection of enamel and metal directions developed for automotive culture. Every piece starts with an existing identity and becomes a new object.</p></div>
+      <div class="works-grid">
+        {works.map((work, i) => <article class={`work work-${i + 1}`}><div class="work-image" style={`background-position:${work.pos}`}></div><div class="work-meta"><span>{work.no}</span><div><h3>{work.title}</h3><p>{work.note}</p></div></div></article>)}
+      </div>
+      <div class="works-foot"><span>CRAFT X / SELECTED STUDIES</span><a href="/customize">Create your own <span>↗</span></a></div>
+    </section>
 
-	<Container>
-		<section class="feature-card__section">
-			<h2>Theme Pages</h2>
-			<p>Learn more about how to set up and use the Odyssey Theme.</p>
-			<div class="feature-card__grid">
-				<FeatureCard
-					href="/theme/get-started"
-					imgSrc="/assets/images/home/screenshots/get-started"
-					title="Get Started"
-				>
-				</FeatureCard>
-				<FeatureCard
-					href="/theme/style-guide"
-					imgSrc="/assets/images/home/screenshots/style-guide"
-					title="Style Guide"
-				>
-				</FeatureCard>
-			</div>
-		</section>
-	</Container>
+    <section class="configure section-dark">
+      <div class="configure-copy"><p class="eyebrow">THE CONFIGURATOR</p><h2>Your vehicle.<br /><em>Your object.</em></h2><p>Start with the vehicle you already drive. Select the marque, model, generation and position, then define the material, finish, enamel and personal mark.</p><a class="button-light" href="/customize">START CONFIGURING <span>↗</span></a></div>
+      <div class="configure-steps"><div><span>01</span><b>VEHICLE</b><small>Brand · Model · Year</small></div><div><span>02</span><b>FORM</b><small>Position · Size · Fit</small></div><div><span>03</span><b>MATERIAL</b><small>Metal · Finish · Enamel</small></div><div><span>04</span><b>PERSONAL</b><small>Signature · Preview</small></div></div>
+    </section>
+
+    <section class="craft section-light">
+      <div class="craft-head"><p class="eyebrow">THE CRAFT</p><h2>Made by hand.<br />Finished with <em>intent.</em></h2></div>
+      <div class="craft-detail"><div class="detail-disc"><div class="disc-inner">CX</div></div><div><p>Metal, wire, enamel and light. We treat every surface as part of the design, with a finish that rewards a closer look.</p><a class="text-link" href="/craft">Discover the craft <span>↗</span></a></div></div>
+    </section>
+
+    <section class="services section-mid">
+      <div class="section-intro"><div><p class="eyebrow">SERVICES</p><h2>More than<br /><em>an emblem.</em></h2></div><p class="intro-copy">From automotive commissions to personal marks and special projects, Craft X is built around objects that carry identity.</p></div>
+      <div class="service-list"><a href="/customize"><span>01</span><strong>Automotive</strong><small>Custom emblem for your vehicle</small><i>↗</i></a><a href="/signature"><span>02</span><strong>Signature</strong><small>Name, monogram or personal mark</small><i>↗</i></a><a href="/custom"><span>03</span><strong>Commission</strong><small>Special logos and one-off objects</small><i>↗</i></a></div>
+    </section>
+
+    <section class="final-cta"><p class="eyebrow">CRAFT X</p><h2>Make the familiar<br /><em>yours.</em></h2><a class="button-dark" href="/customize">BEGIN A COMMISSION <span>↗</span></a></section>
+  </main>
 </Layout>
-
 <style>
-	.feature-card__section {
-		margin: var(--section-margin) auto;
-	}
-	.feature-card__grid {
-		display: grid;
-		grid-template-columns: repeat(2, 1fr);
-		gap: var(--theme-grid-gap);
-	}
-	@media (max-width: 768px) {
-		.feature-card__grid {
-			grid-template-columns: 1fr;
-		}
-	}
+:global(html){scroll-behavior:smooth}:global(body){margin:0;background:#111;color:#141414;font-family:Arial,Helvetica,sans-serif}.cx-site{overflow:hidden}.section-light{background:#f2f0ea;color:#171717}.section-mid{background:#ddd9d0;color:#171717}.section-dark{background:#111;color:#f1eee8}
+.hero{position:relative;min-height:100svh;background:#111;color:#f4f1e9;display:flex;align-items:flex-end;overflow:hidden}.hero-media,.hero-shade{position:absolute;inset:0}.hero-media img{width:100%;height:100%;object-fit:cover;filter:saturate(.8) contrast(1.05);transform:scale(1.04)}.hero-shade{background:linear-gradient(90deg,rgba(0,0,0,.72),rgba(0,0,0,.12) 65%,rgba(0,0,0,.42)),linear-gradient(0deg,rgba(0,0,0,.68),transparent 48%)}.hero-content{position:relative;z-index:2;padding:0 7vw 7vw;max-width:900px}.eyebrow{font-size:10px;letter-spacing:.22em;text-transform:uppercase;opacity:.58;margin:0 0 26px}.hero h1{font-size:clamp(70px,10vw,160px);font-weight:300;line-height:.83;letter-spacing:-.07em;margin:0}.hero em,.section-intro em,.configure em,.craft em,.services em,.final-cta em{font-family:Georgia,serif;font-weight:400}.hero-bottom{display:flex;align-items:flex-end;justify-content:space-between;gap:50px;margin-top:50px}.hero-bottom p{max-width:360px;font-size:14px;line-height:1.55;opacity:.7;margin:0}.hero-bottom a{color:inherit;text-decoration:none;border-bottom:1px solid rgba(255,255,255,.45);padding-bottom:12px;font-size:10px;letter-spacing:.16em;text-transform:uppercase}.hero-bottom span,.button-light span,.button-dark span,.text-link span,.works-foot a span{font-size:16px;margin-left:10px}.hero-index{position:absolute;right:30px;top:100px;font-size:9px;letter-spacing:.16em;opacity:.4;writing-mode:vertical-rl}
+.works{padding:12vw 7vw 6vw}.section-intro{display:grid;grid-template-columns:1fr 1fr;gap:8vw;align-items:end}.section-intro h2,.craft-head h2,.configure h2,.final-cta h2{font-size:clamp(54px,7vw,108px);font-weight:300;line-height:.88;letter-spacing:-.065em;margin:0}.intro-copy{max-width:440px;font-size:17px;line-height:1.55;opacity:.62;margin:0 0 4px}.works-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:18px;margin-top:10vw}.work{min-height:520px}.work:nth-child(2),.work:nth-child(3){min-height:420px}.work-image{height:calc(100% - 70px);min-height:390px;background-image:url('/images/craft-x-works.svg');background-size:330% 330%;background-repeat:no-repeat;background-color:#858585;transition:transform .7s cubic-bezier(.2,.7,.2,1),filter .7s}.work:hover .work-image{transform:scale(.985);filter:contrast(1.08) saturate(1.05)}.work-meta{display:grid;grid-template-columns:40px 1fr;gap:14px;padding:16px 0;border-top:1px solid #b8b4ab}.work-meta span{font-size:9px;opacity:.4}.work-meta h3{font-size:11px;letter-spacing:.13em;font-weight:500;margin:0 0 7px}.work-meta p{font-size:12px;opacity:.5;margin:0}.works-foot{display:flex;justify-content:space-between;border-top:1px solid #b8b4ab;margin-top:7vw;padding-top:18px;font-size:9px;letter-spacing:.16em;opacity:.6}.works-foot a{color:inherit;text-decoration:none}
+.configure{padding:11vw 7vw;display:grid;grid-template-columns:1fr 1fr;gap:10vw}.configure-copy>p:not(.eyebrow){max-width:450px;font-size:17px;line-height:1.6;opacity:.62;margin:42px 0 0}.button-light,.button-dark{display:inline-flex;color:inherit;text-decoration:none;border:1px solid currentColor;padding:17px 18px;margin-top:38px;font-size:10px;letter-spacing:.16em}.configure-steps{border-top:1px solid #414141;display:grid;grid-template-columns:1fr 1fr}.configure-steps>div{min-height:150px;padding:20px 14px 20px 0;border-bottom:1px solid #414141}.configure-steps span{font-size:9px;opacity:.4}.configure-steps b{display:block;font-weight:400;font-size:15px;letter-spacing:.1em;margin:38px 0 9px}.configure-steps small{font-size:11px;opacity:.45}
+.craft{padding:12vw 7vw}.craft-detail{margin-top:9vw;display:grid;grid-template-columns:1.1fr .9fr;align-items:center;gap:10vw}.detail-disc{width:min(50vw,610px);aspect-ratio:1;border-radius:50%;background:radial-gradient(circle at 34% 30%,#dad5ca 0,#8a877f 24%,#282725 62%,#090909 100%);box-shadow:0 35px 80px rgba(0,0,0,.22),inset 0 0 0 2px #a59f92;display:grid;place-items:center}.disc-inner{width:36%;aspect-ratio:1;border-radius:50%;display:grid;place-items:center;border:1px solid #c8c1b3;color:#eee;font-size:clamp(28px,4vw,60px);letter-spacing:.08em}.craft-detail p{font-size:19px;line-height:1.55;max-width:390px;opacity:.62}.text-link{display:inline-block;color:inherit;text-decoration:none;border-bottom:1px solid #aaa;padding-bottom:10px;margin-top:24px;font-size:10px;letter-spacing:.16em;text-transform:uppercase}
+.services{padding:12vw 7vw}.service-list{margin-top:9vw;border-top:1px solid #aaa}.service-list a{display:grid;grid-template-columns:50px 1.1fr 1fr 30px;align-items:center;padding:28px 0;border-bottom:1px solid #aaa;color:inherit;text-decoration:none}.service-list span{font-size:9px;opacity:.45}.service-list strong{font-size:24px;font-weight:300}.service-list small{font-size:12px;opacity:.5}.service-list i{font-style:normal;font-size:18px;text-align:right}.service-list a:hover strong{letter-spacing:.03em}
+.final-cta{background:#b7a98f;color:#111;padding:14vw 7vw}.final-cta h2{margin-top:0}.button-dark{margin-top:50px}
+@media(max-width:768px){.cx-header{display:flex}.hero{min-height:88svh}.hero-content{padding:0 7vw 13vw}.hero h1{font-size:60px}.hero-bottom{display:block;margin-top:36px}.hero-bottom a{display:inline-block;margin-top:30px}.section-intro,.configure,.craft-detail{grid-template-columns:1fr;gap:50px}.works{padding-top:22vw}.works-grid{grid-template-columns:1fr;gap:35px;margin-top:18vw}.work,.work:nth-child(2),.work:nth-child(3){min-height:0}.work-image{height:78vw;min-height:0}.configure{padding:20vw 7vw}.configure-steps{margin-top:20px}.craft{padding:20vw 7vw}.detail-disc{width:86vw}.services{padding:20vw 7vw}.service-list{margin-top:16vw}.service-list a{grid-template-columns:32px 1fr 22px}.service-list small{display:none}.service-list strong{font-size:19px}.final-cta{padding:25vw 7vw}.final-cta h2{font-size:64px}.works-foot{margin-top:16vw}.hero-index{display:none}}
 </style>

@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800">
+<defs>
+  <radialGradient id="metal" cx="35%" cy="30%"><stop offset="0" stop-color="#e7e2d8"/><stop offset=".28" stop-color="#8e8a82"/><stop offset=".62" stop-color="#252525"/><stop offset="1" stop-color="#090909"/></radialGradient>
+  <radialGradient id="blue" cx="40%" cy="35%"><stop offset="0" stop-color="#3b82b5"/><stop offset=".48" stop-color="#0e2b48"/><stop offset="1" stop-color="#06111c"/></radialGradient>
+  <radialGradient id="gold" cx="35%" cy="30%"><stop offset="0" stop-color="#d9bd73"/><stop offset=".5" stop-color="#4b3a1d"/><stop offset="1" stop-color="#0b0a08"/></radialGradient>
+  <filter id="shadow"><feDropShadow dx="0" dy="18" stdDeviation="14" flood-opacity=".45"/></filter>
+</defs>
+<rect width="1200" height="800" fill="#858585"/>
+<g filter="url(#shadow)" stroke="#c9c5bd" stroke-width="6">
+  <g transform="translate(170 180)"><circle r="120" fill="url(#metal)"/><circle r="88" fill="url(#blue)" stroke="#d2c39c" stroke-width="2"/><path d="M-68 0L0-68L68 0L0 68Z" fill="none" stroke="#eee" stroke-width="5"/><text x="0" y="10" text-anchor="middle" font-size="32" fill="#fff" font-family="Arial" font-weight="700">CRAFT</text></g>
+  <g transform="translate(480 180)"><circle r="120" fill="url(#blue)"/><path d="M-70-65L0 70L70-65L0-25Z" fill="none" stroke="#e9dfc7" stroke-width="5"/><text x="0" y="12" text-anchor="middle" font-size="34" fill="#fff" font-family="Georgia">X</text></g>
+  <g transform="translate(810 180)"><ellipse rx="155" ry="92" fill="url(#blue)"/><path d="M-100 15Q0-70 100 15" fill="none" stroke="#c9e6f2" stroke-width="5"/><text x="0" y="20" text-anchor="middle" font-size="42" fill="#fff" font-family="Georgia">FORM</text></g>
+  <g transform="translate(170 500)"><circle r="120" fill="url(#gold)"/><circle r="84" fill="none" stroke="#d9bd73" stroke-width="3"/><path d="M-75 0H75M0-75V75" stroke="#e8d8ad" stroke-width="4"/><text x="0" y="13" text-anchor="middle" font-size="30" fill="#f4e6be" font-family="Arial">01</text></g>
+  <g transform="translate(480 500)"><ellipse rx="155" ry="92" fill="url(#metal)"/><ellipse rx="115" ry="62" fill="url(#gold)" stroke="#d9bd73" stroke-width="3"/><text x="0" y="17" text-anchor="middle" font-size="42" fill="#eee" font-family="Arial" font-weight="700">OBJECT</text></g>
+  <g transform="translate(810 500)"><circle r="120" fill="url(#blue)"/><path d="M-72 40L0-72L72 40L0 15Z" fill="none" stroke="#dce9ed" stroke-width="5"/><text x="0" y="16" text-anchor="middle" font-size="28" fill="#fff" font-family="Arial">CUSTOM</text></g>
+</g>
+</svg>
