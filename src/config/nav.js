@@ -1,7 +1,6 @@
 export const nav = [
-	{ title: 'Home', slug: '/' },
-	{ title: 'Customize', slug: '/customize' },
-	{ title: 'Signature', slug: '/signature' },
-	{ title: 'Craft', slug: '/craft' },
-	{ title: 'About', slug: '/about' },
+  { title: 'Works', slug: '/#works' },
+  { title: 'Configure', slug: '/customize' },
+  { title: 'Craft', slug: '/craft' },
+  { title: 'Services', slug: '/about' },
 ];
